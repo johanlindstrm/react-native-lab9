@@ -14,10 +14,6 @@ export function Item({ product, action }) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-  
     product: {
       backgroundColor: 'white',
       flexDirection: 'row',
@@ -34,18 +30,5 @@ const styles = StyleSheet.create({
       color: 'black',
       fontSize: 18,
       fontWeight: '300',
-    },
-
-    darkModeBackground: {
-      backgroundColor: 'black',
-    },
-  
-    darkModeText: {
-      color: 'white',
-    },
-  
-    darkModeButton: {
-      position: 'absolute',
-      bottom: 10,
     },
   });
