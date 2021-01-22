@@ -1,10 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { ThemeContext } from '../context/ThemeContext.js'
 
 export function Item({ product, action }) {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <View style={styles.product}>
-      <Text style={styles.productName}>{product.name}</Text>
+    <View style={{...styles.product, backgroundColor: isDarkMode ? 'black' : 'white'}}>
+      <Text style={{...styles.productName, color: isDarkMode ? 'white' : 'black'}}>{product.name}</Text>
       {action}
     </View>
   );
@@ -13,11 +16,6 @@ export function Item({ product, action }) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-    },
-  
-    header: {
-      fontSize: 20,
-      fontWeight: 'bold',
     },
   
     product: {
@@ -37,18 +35,7 @@ const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: '300',
     },
-  
-    noItemsText: {
-      fontSize: 16,
-      marginTop: 20,
-      textAlign: 'center',
-    },
-  
-    inCartText: {
-      fontSize: 16,
-      color: 'grey',
-    },
-  
+
     darkModeBackground: {
       backgroundColor: 'black',
     },

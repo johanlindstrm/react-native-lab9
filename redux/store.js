@@ -17,6 +17,7 @@ export function reducerFunction(state = { cartItems: [] }, action) {
       console.log('array after removing item: ', updatedCartItems);
       return { cartItems: updatedCartItems };
     case CHECK_OUT:
+      console.log('Check Out all items!')
       return { cartItems: [] };
     default:
       return state;

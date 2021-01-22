@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { CartItem } from '../components/CartItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { CHECK_OUT,REMOVE_ITEM } from '../redux/actionTypes';
+import { ToggleButton } from '../components/ToggleButton.js'
 
 export default function ShoppingCart() {
   const cartItems = useSelector((state) => state.cartItems);
@@ -10,6 +11,7 @@ export default function ShoppingCart() {
 
   return (
     <View style={styles.container}>
+      <ToggleButton/>
       {cartItems.map((item) => (
         <CartItem
           key={item.id}

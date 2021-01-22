@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { ADD_ITEM } from '../redux/actionTypes';
-import { Item } from '../components/Item.js';
+import{ ToggleButton } from '../components/ToggleButton.js';
 import { Product } from '../components/Product.js';
 
 const allProductItems = [
@@ -13,35 +13,12 @@ const allProductItems = [
   { id: 5, name: 'Orange Juice' },
 ];
 
-// function Item({ product, action }) {
-//   return (
-//     <View style={styles.product}>
-//       <Text style={styles.productName}>{product.name}</Text>
-//       {action}
-//     </View>
-//   );
-// }
-
-// function Product({ product, addToCart, productInCart }) {
-//   return (
-//     <Item
-//       product={product}
-//       action={
-//         productInCart ? (
-//           <Text style={styles.inCartText}>Item In Cart</Text>
-//         ) : (
-//           <Button title="Add to Cart" onPress={addToCart} />
-//         )
-//       }
-//     />
-//   );
-// }
-
 export default function Products() {
     const dispatch = useDispatch()
 
   return (
     <View style={styles.container}>
+      <ToggleButton />
       {allProductItems.map((product) => (
         <Product
           key={product.id}
